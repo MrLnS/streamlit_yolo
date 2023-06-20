@@ -40,10 +40,10 @@ if uploaded_file is not None:
   
   st.code(detect_class[['name', 'xmin','ymin', 'xmax', 'ymax']])
   
-  detectW = detect_class[detect_class['xmin']<=Cimg]
+  detectW = detect_class[detect_class['xmin'] <= Cimg]
 
-  textA = 'นักเรียนทั้งหมด : ' + str(detect_class.shape[0]) + 'คน'
-  textR = 'นักเรียนที่อยู่ผิดสนาม' + str(detectW.shapr[0]) + 'คน'
+  textA = 'นักเรียนทั้งหมด : ' + str(detect_class.shape[0]) + ' คน'
+  textR = 'นักเรียนที่อยู่ผิดสนาม' + str(detectW.shapr[0]) + ' คน'
   #st.success(detect_class)
   
   outputpath = 'output.jpg'
