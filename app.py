@@ -25,6 +25,10 @@ if uploaded_file is not None:
 
   st.write("")
   st.write("Detecting...")
+
+  imgW = imgRGB.shape[1]
+  Cimg = imgW/2
+  
   result = model(imgRGB, size=600)
   
   detect_class = result.pandas().xyxy[0] 
@@ -36,8 +40,10 @@ if uploaded_file is not None:
   
   st.code(detect_class[['name', 'xmin','ymin', 'xmax', 'ymax']])
   
-  
-  
+  detectW = detect_class[detect_class[xmin]<=Cimg]
+
+  textA = 'นักเรียนทั้งหมด : ' + str(detect_class.shape[0]) + 'คน'
+  textR = 'นักเรียนที่อยู่ผิดสนาม' + str(detectW.shapr[0]) + 'คน'
   #st.success(detect_class)
   
   outputpath = 'output.jpg'
