@@ -43,7 +43,7 @@ if uploaded_file is not None:
   detectW = detect_class[detect_class['xmin'] <= Cimg]
 
   textA = 'นักเรียนทั้งหมด : ' + str(detect_class.shape[0]) + ' คน'
-  textR = 'นักเรียนที่อยู่ผิดสนาม : ' + str(detectW.shapr[0]) + ' คน'
+  textR = 'นักเรียนที่อยู่ผิดสนาม : ' + str(detectW.shape[0]) + ' คน'
   st.success(textA)
   st.success(textR)
   outputpath = 'output.jpg'
